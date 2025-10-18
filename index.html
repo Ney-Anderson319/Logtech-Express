@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logtech Express</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!--Tela de Login-->
+    <div id="paginaLogin" class="pagina ativa">
+        <div class="login">
+            <h1>Logtech Express</h1>
+            <p class="lema">"Não há produto que a <b>Logtech</b> não possa entregar!"</p>
+            <br><br>
+            <input type="text" id="usuario" placeholder="Usuário">
+            <input type="password" id="senha" placeholder="Senha">
+            <br>
+            <p style="color: rgb(10, 188, 188); text-decoration: underline; text-align: center; font-size: 15px; cursor: pointer;" onclick="semConta()">
+                Ainda não tem uma Conta?
+            </p>
+            <br>
+            <button onclick="fazerLogin()">Entrar</button>
+        </div>
+    </div>
+
+    <!--Tela para Fazer Login-->
+    <div id="semConta" class="pagina">
+        <div class="fazerConta">
+            <h1>Olá, esta é a Logtech Express!</h1>
+            <p class="lema">"Não há produto que a <b>Logtech</b> não possa entregar!"</p>
+            <br>
+            <p class="lema">Crie sua conta com as seguintes informações</p>
+            <p style="font-size: 13px;">Qual seu Email?</p>
+            <input type="email" id="email">
+
+            <p style="font-size: 13px;">Qual sua idade?</p>
+            <input type="date" id="idade">
+
+            <p style="font-size: 13px;">Como gostaria de ser chamado em nossa equipe?</p>
+            <input type="text" id="usu1">
+
+            <p style="font-size: 13px;">Crie uma senha para sua Segurança:</p>
+            <input type="password" id="senha1">
+
+            <p style="font-size: 13px;">Confirme sua Senha:</p>
+            <input type="password" id="senha2">
+            <p style="color: rgb(10, 188, 188); text-decoration: underline; text-align: center; font-size: 15px; cursor: pointer;" onclick="fazerLogout()">
+                Já tem uma Conta?
+            </p>
+            <br>
+            <button onclick="validarConta()">Entrar</button>
+        </div>
+    </div>
+
+    <!--Tela Principal-->
+    <div id="paginaPrin" class="pagina">
+        <div class="pagina2">
+            <div class="header">
+                <h1>Bem-vindo(a) a Logtech Express <span id="nomeUsuario"></span> !</h1>
+                <button class="btn-sair" onclick="fazerLogout()">Sair</button>
+            </div>
+            <div class="btns-navegar">
+                <button class="btn-carrinho" onclick="mudarCarrinho()">Carrinho</button>
+                <button class="btn-vender" onclick="mudarVender()">Vender Produtos</button>
+                <button class="btn-ajuda" style="cursor: progress;">Ajuda Suporte</button>
+                <button class="btn-perfil" onclick="mudarPerfil()">Meu Perfil</button>
+            </div>
+            <h1>Ofertas Disponíveis</h1>
+            <div class="produtos">
+                <div class="produto1">
+                    <img src="img/azul.png" alt="Makita" style="border-radius: 20px;">
+                    <h1>Camisa Azul Marinho Escuro e Dourado 2°DS 2025</h1>
+                    <button class="add-carrinho"><b>Adicionar ao Carrinho</b></button>
+                    <button class="fale-cnsc"><b>Fale Conosco</b></button>
+                    <p>Este é o conjunto ideal para quem exige performance sem abrir mão do estilo. A combinação clássica do Azul Marinho Escuro com o Dourado confere autoridade máxima ao atleta e ao torcedor.</p>
+                    <br>
+                    <p>Preço:  R$ 67,99 <br>
+                       Unidades em estoque:  43 <br>
+                       Vendedor:  <b>2° Desenvolvimento de Sistemas</b> e <b>Ecodry</b><br>
+                    </p>
+                </div>
+                <div class="produto2">
+                    <img src="img/branco.png" alt="Camisa do Mirassol" style="border-radius: 20px;">
+                    <h1>Camisa Azul Royal, Branco e Dourado 2°DS 2025</h1>
+                    <button class="add-carrinho2"><b>Adicionar ao Carrinho</b></button>
+                    <button class="fale-cnsc2"><b>Fale Conosco</b></button>
+                    <p>Este é o conjunto ideal para quem exige performance sem abrir mão do estilo. A combinação clássica do Azul Royal e Branco, com o Dourado confere autoridade máxima ao atleta e ao torcedor.</p>
+                    <br>
+                    <p>Preço: R$ 67,99 <br>
+                       Unidades em estoque: 43 <br>
+                       Vendedor: <b>2° Desenvolvimento de Sistemas</b> e <b>Ecodry</b><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Tela de Carrinho-->
+    <div id="carrinho" class="pagina">
+        <div class="pagina2">
+            <div class="header">
+                <h1>Este é o seu Carrinho!</h1>
+                <button class="btn-sair" onclick="fazerLogout()">Sair</button>
+            </div>
+            <div class="btns-navegar">
+                <button class="btn-produto" onclick="mudarProdutos()">Produtos</button>
+                <button class="btn-vender" onclick="mudarVender()">Vender Produtos</button>
+                <button class="btn-ajuda" style="cursor: progress;">Ajuda Suporte</button>
+                <button class="btn-perfil" onclick="mudarPerfil()">Meu Perfil</button>
+            </div>
+            <div class="login">
+            <h1>"Não há produtos em seu carrinho ainda..."</h1>
+            </div>
+        </div>
+    </div>
+    <!--Tela de Vendas-->
+    <div id="vender" class="pagina">
+        <div class="pagina2">
+            <div class="header">
+                <h1>Aqui você pode vender seus produtos!</h1>
+                <button class="btn-sair" onclick="fazerLogout()">Sair</button>
+            </div>
+            <div class="btns-navegar">
+                <button class="btn-produto" onclick="mudarProdutos()">Produtos</button>
+                <button class="btn-carrinho" onclick="mudarCarrinho()">Carrinho</button>
+                <button class="btn-ajuda" style="cursor: progress;">Ajuda Suporte</button>
+                <button class="btn-perfil" onclick="mudarPerfil()">Meu Perfil</button>
+            </div>
+                <h1>Nenhum produto ainda, coloque o primeiro!</h1>
+                <br>
+                <p class="lema">O nome de quem está vendendo é o qual foi colocado ao criar a conta!
+                    Para mudalo acesse a tela de <b onclick="mudarPerfil()" style="cursor: pointer;">Meu Perfil</b>
+                </p>
+                <br>
+                <input type="text" placeholder="Qual o nome do produto?">
+                <br>
+                <input type="number" placeholder="Quantas unidades dele você tem?">
+                <br>
+                <input type="number" placeholder="Qualo o preço dele?">
+                <br>
+                <p>Coloque uma imagem do seu Produto!</p>
+                <input type="image" style="background-color: white; color: rgb(29, 29, 127); border: none; font-size: 15px; border-radius: 20px; cursor: pointer;">
+                <br>
+                <input type="tel" placeholder="Telefone para contato">
+                <br>
+                <input type="text" placeholder="Onde podemos buscar?">
+                <br>
+                <input type="text" placeholder="Descreva seu produto">
+                <br>
+                <button class="addProduto">Adicionar Produto</button>
+            </div>
+        </div>
+    </div>
+    <!--Tela de Perfil do Usuário-->
+    <div id="perfilUsu" class="pagina">
+        <div class="pagina2">
+            <div class="header">
+                <h1>Aqui você pode ver sua informações!</h1>
+                <button class="btn-sair" onclick="fazerLogout()">Sair</button>
+            </div>
+            <div class="btns-navegar">
+                <button class="btn-produto" onclick="mudarProdutos()">Produtos</button>
+                <button class="btn-carrinho" onclick="mudarCarrinho()">Carrinho</button>
+                <button class="btn-vender" onclick="mudarVender()">Vender Produtos</button>
+                <button class="btn-ajuda" style="cursor: progress;">Ajuda Suporte</button>
+            </div>
+            <div class="informacoes">
+                <p><b>Este é o seu email:</b></p>
+                <p style="font-size: 13px;">EmailDoUsuario@exemplo.com</p>
+                <p><b>Este é o nome que podemos lhe chamar:</b></p>
+                <p style="font-size: 13px;">NomeDoUsuario</p>
+                <p><b>Esta é a sua idade</b></p>
+                <p style="font-size: 13px;">IdadeDoUsuario:</p>
+                <p style="color: rgb(10, 188, 188); text-decoration: underline; font-size: 15px; cursor: pointer;" onclick="minhasInf()">
+                    O que fazem com as minhas informações?
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="informacoes" class="pagina">
+        <div class="login">
+            <button class="voltar" onclick="mudarPerfil()">⬅</button>
+            <h1>"Usamos suas informações para Personalizar a experiência do usuário, direcionar publicidade melhorar os serviços e entender o comportamento do público!"</h1>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
