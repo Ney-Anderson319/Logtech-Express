@@ -2,7 +2,7 @@ function fazerLogin() {
     const usuario = document.getElementById('usuario').value;
     const senha = document.getElementById('senha').value;
     
-    // Validação simples (você pode adicionar sua própria lógica)
+    // Validação
     if (usuario.trim() == '' && senha.trim() == '') {
         // Nome e usuário não colocados
         alert("Por favor, preencha Usuário e Senha!");
